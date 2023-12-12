@@ -27,7 +27,7 @@ public class LoggerAspect {
     }
 
     @After(value = "logPointcut(log)", argNames = "pjp,log")
-    private void after(ProceedingJoinPoint pjp, LOG log) throws IllegalAccessException, NoSuchFieldException {
+    public void after(ProceedingJoinPoint pjp, LOG log) throws IllegalAccessException, NoSuchFieldException {
         logger.logAOP(log.level(), "Method '" + pjp.getSignature().getName()  + "' was called");
     }
 }
